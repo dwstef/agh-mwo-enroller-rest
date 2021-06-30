@@ -75,9 +75,10 @@ public class MeetingRestController {
 
 	}
 
-	// POST http://localhost:8080/meetings/2/participants/foos?login=user2
-	@RequestMapping(value = "/{id}/participants/foos", method = RequestMethod.POST)
-	public ResponseEntity<?> assignParticipant(@PathVariable("id") long id, @RequestParam String login) {
+	
+	// POST http://localhost:8080/meetings/2/participants/user2
+	@RequestMapping(value = "/{id}/participants/{login}", method = RequestMethod.POST)
+	public ResponseEntity<?> assignParticipant(@PathVariable("id") long id, @PathVariable("login") String login) {
 		Meeting meeting = meetingService.findByID(id);
 		if (meeting == null) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);

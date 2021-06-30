@@ -14,7 +14,7 @@ import com.company.enroller.model.Participant;
 @Component("meetingService")
 public class MeetingService {
 
-//	DatabaseConnector connector;
+	DatabaseConnector connector;
 	Session session;
 
 	public MeetingService() {
